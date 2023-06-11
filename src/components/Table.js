@@ -49,6 +49,7 @@ export default function DataTable(props) {
   }, [props.refresh])
 
   const typeParser = (type) => {
+    //1,2,3 => CD, DVD, MEDIA
     return typeValue[type];
   };
 
@@ -74,7 +75,7 @@ export default function DataTable(props) {
               <TableCell>{row.title}</TableCell>
               <TableCell>{row.description}</TableCell>
               <TableCell>{typeParser(row.type)}</TableCell>
-              <TableCell>{row.power}</TableCell>
+              <TableCell>{row.power} W</TableCell>
               <TableCell>{row.price} $</TableCell>
               <TableCell>
                 <Button variant="outlined" color="warning" onClick={() => handleEdit(row.id)} size="small">
